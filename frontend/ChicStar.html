@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChicStar - Joias Elegantes</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="img/logo.png" type="image/png" />
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,500&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo" onclick="scrollToTop()">
+                <img src="img/logotratada.png" alt="Logo ChicStar">
+            </div>
+            <nav class="header-nav">
+                <div class="nav-buttons" id="navButtons">
+                    <button id="loginBtn" class="login-btn">Entrar</button>
+                    <button id="cadastroBtn" class="cadastro-btn">Cadastrar-se</button>
+                </div>
+                <div class="user-menu" id="userMenu" style="display: none;">
+                    <span class="user-name" id="userName"></span>
+                    <div class="user-dropdown">
+                        <button class="dropdown-btn" id="dropdownBtn">▼</button>
+                        <div class="dropdown-content" id="dropdownContent">
+                            <a href="#" id="profileLink">Meu Perfil</a>
+                            <a href="#" id="ordersLink">Meus Pedidos</a>
+                            <a href="#" id="favoritesLink">Favoritos</a>
+                            <a href="#" id="logoutLink">Sair</a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1 class="titulo">ChicStar<span class="decorative-star">✦</span></h1>
+                    <h2 class="elegant-title">Descubra a beleza <strong>atemporal</strong><br>Para quem valoriza o <strong>atemporal</strong>,<br>o <strong>exclusivo</strong> e o <strong>extraordinário</strong>.</h2>
+                    <p class="texto">Descubra nossa coleção exclusiva de joias elegantes</p>
+                    
+                    <button class="scroll-btn" onclick="scrollToProducts()">
+                        <span>Explorar Produtos</span>
+                        <div class="scroll-arrow">↓</div>
+                    </button>
+                </div>
+                <div class="hero-image">
+                    <img src="img/anelparalanding.png" alt="Anel Elegante" class="anel">
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- segunda pagina dos produtos -->
+    <section id="produtos" class="products-section">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nossa Coleção</h2>
+                <p class="section-subtitle">Joias únicas que refletem sua personalidade</p>
+            </div>
+            
+            <div class="products-grid" id="productsGrid">
+                <!-- produtos serao carregados dinamicamente -->
+            </div>
+            
+            <div class="cta-section">
+                <h3>Pronto para brilhar?</h3>
+                <p>Entre em contato conosco para mais informações</p>
+                <button class="contact-btn">Fale Conosco</button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ChicStar. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Entrar na ChicStar</h2>
+                <button id="closeLoginModal" class="close-btn">&times;</button>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email *</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="loginSenha">Senha *</label>
+                    <input type="password" id="loginSenha" name="senha" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="lembrarLogin" name="lembrarLogin">
+                        <span class="checkmark"></span>
+                        Lembrar de mim
+                    </label>
+                </div>
+                
+                <button type="submit" id="loginSubmitBtn" class="submit-btn">Entrar</button>
+                
+                <div class="form-footer">
+                    <p>Não tem uma conta? <a href="#" id="switchToCadastro">Cadastre-se aqui</a></p>
+                    <p><a href="#" id="forgotPassword">Esqueci minha senha</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Cadastro -->
+    <div id="cadastroModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Cadastre-se na ChicStar</h2>
+                <button id="closeCadastroModal" class="close-btn">&times;</button>
+            </div>
+            
+            <form id="cadastroForm" class="cadastro-form">
+                <div class="form-group">
+                    <label for="nome">Nome Completo *</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="telefone">Telefone *</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(11) 99999-9999" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="senha">Senha *</label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmarSenha">Confirmar Senha *</label>
+                    <input type="password" id="confirmarSenha" name="confirmarSenha" required>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="aceitaTermos" name="aceitaTermos" required>
+                        <span class="checkmark"></span>
+                        Aceito os <a href="#" class="terms-link">termos de uso</a> e <a href="#" class="terms-link">política de privacidade</a> *
+                    </label>
+                </div>
+                
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="aceitaNewsletter" name="aceitaNewsletter">
+                        <span class="checkmark"></span>
+                        Quero receber ofertas exclusivas por email
+                    </label>
+                </div>
+                
+                <button type="submit" id="cadastroSubmitBtn" class="submit-btn">Cadastrar</button>
+                
+                <div class="form-footer">
+                    <p>Já tem uma conta? <a href="#" id="switchToLogin">Faça login aqui</a></p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- modal de perfil do usuario -->
+    <div id="profileModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Meu Perfil</h2>
+                <button id="closeProfileModal" class="close-btn">&times;</button>
+            </div>
+            
+            <div class="profile-content">
+                <div class="profile-info">
+                    <h3>Informações Pessoais</h3>
+                    <form id="profileForm">
+                        <div class="form-group">
+                            <label for="profileNome">Nome Completo</label>
+                            <input type="text" id="profileNome" name="nome">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileEmail">Email</label>
+                            <input type="email" id="profileEmail" name="email" readonly>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="profileTelefone">Telefone</label>
+                            <input type="tel" id="profileTelefone" name="telefone">
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="profileNewsletter" name="aceitaNewsletter">
+                                <span class="checkmark"></span>
+                                Receber ofertas por email
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">Salvar Alterações</button>
+                    </form>
+                </div>
+                
+                <div class="profile-stats">
+                    <h3>Estatísticas</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalPedidos">0</span>
+                            <span class="stat-label">Pedidos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="totalFavoritos">0</span>
+                            <span class="stat-label">Favoritos</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" id="membroDesde">-</span>
+                            <span class="stat-label">Membro desde</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function scrollToProducts() {
+            document.getElementById('produtos').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>

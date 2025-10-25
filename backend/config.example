@@ -1,0 +1,25 @@
+# Configurações do Servidor ChicStar
+# Copie este arquivo para .env e configure as variáveis
+
+# Porta do servidor (padrão: 3000)
+PORT=3000
+
+# Chave secreta para JWT (altere em produção)
+JWT_SECRET=chicstar_secret_key_2025_change_in_production
+
+# Configurações do banco de dados
+DB_FILE=database.json
+
+# Configurações de email (para futuras funcionalidades)
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USER=seu_email@gmail.com
+EMAIL_PASS=sua_senha_app
+
+# Configurações de pagamento (para futuras funcionalidades)
+PAYMENT_GATEWAY_URL=https://api.pagseguro.com
+PAYMENT_GATEWAY_TOKEN=seu_token_pagseguro
+
+# Configurações de desenvolvimento
+NODE_ENV=development
+DEBUG=true
