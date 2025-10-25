@@ -85,8 +85,8 @@ App_estudafacil/
    ```
 
 4. **Acesse o site**
-   - Site: http://localhost:3000
-   - API: http://localhost:3000/api
+   - Site: -----
+   - API: -----
 
 ## Rotas da API
 
@@ -152,7 +152,7 @@ Por enquanto estou usando um arquivo JSON simples (`backend/database.json`) que 
 ## Como usar o site
 
 ### Se você ainda não tem conta:
-1. Acesse http://localhost:3000
+1. Acesse -----
 2. Clique em "Entrar" para fazer login
 3. Ou clique em "Cadastrar-se" para criar uma conta nova
 4. Quando se cadastrar, você ganha um desconto de boas-vindas!
@@ -230,8 +230,8 @@ Se algo não estiver funcionando, tente essas soluções:
 ## Contato
 
 Se tiver alguma dúvida ou sugestão:
-- **Email**: suporte@chicstar.com
-- **GitHub**: [Criar issue](https://github.com/chicstar/app-estudafacil/issues)
+- **Email**: scriptwise.tech@gmail.com
+- **GitHub**: https://github.com/scriptwisetech-dev
 
 ## Licença
 
